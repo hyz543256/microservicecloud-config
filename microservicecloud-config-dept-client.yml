@@ -1,14 +1,15 @@
-spring: 
+
+spring:
   profiles:
     active:
     - dev
---- 
+---
 server:
   port: 8001
 
-spring: 
+spring:
   profiles: dev
-    application: 
+  application:
       name: microservicecloud-config-dept-client
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -22,15 +23,15 @@ mybatis:
   type-aliases-package: com.hyz.entities
   mapper-locations:
   - classpath:mybatis/mapper/**/*.xml
- 
-eureka: 
+
+eureka:
   client: #客户端注册进eureka服务列表内
-    service-url: 
+    service-url:
       defaultZone: http://eureka7001.com:7001/eureka
   instance:
     instance-id: dept-8001.com
     prefer-ip-address: true
- 
+
 info:
   app.name: cyh-microservicecloud
   company.name: www.cyh.com
@@ -40,31 +41,31 @@ info:
 server:
   port: 8001
 
-spring: 
+spring:
   profiles: test
-    application: 
-      name: microservicecloud-config-dept-client
+  application:
+     name: microservicecloud-config-dept-client
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
     url: jdbc:mysql://localhost:3306/cloudDB02
     username: root
     password: 123456
-  
+
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml
   type-aliases-package: com.hyz.entities
   mapper-locations:
   - classpath:mybatis/mapper/**/*.xml
- 
-eureka: 
+
+eureka:
   client: #客户端注册进eureka服务列表内
-    service-url: 
+    service-url:
       defaultZone: http://eureka7001.com:7001/eureka
   instance:
     instance-id: dept-8001.com
     prefer-ip-address: true
- 
+
 info:
   app.name: cyh-microservicecloud
   company.name: www.cyh.com
